@@ -1,7 +1,9 @@
 package me.xakeplusplus.spg.module;
 
 import me.xakeplusplus.spg.SpaghettiClient;
+import me.xakeplusplus.spg.module.modules.misc.DiscordRichPresence;
 import me.xakeplusplus.spg.module.modules.movement.*;
+import me.xakeplusplus.spg.module.modules.render.*;
 import net.minecraftforge.common.MinecraftForge;
 
 import java.util.ArrayList;
@@ -15,6 +17,9 @@ public class ModuleManager {
         (modules = new ArrayList<Module>()).clear();
         MinecraftForge.EVENT_BUS.register(this);
         this.modules.add(new Sprint());
+        this.modules.add(new Velocity());
+        this.modules.add(new Fullbright());
+        this.modules.add(new DiscordRichPresence());
     }
 
     public void onUpdate() {

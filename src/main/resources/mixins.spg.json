@@ -4,6 +4,7 @@
 "package": "me.xakeplusplus.spg.mixin.mixins",
 "refmap": "mixins.spg.refmap.json",
 "mixins": [
-    "MixinEntityPlayerSP"
+    "MixinEntityPlayerSP",
+    "MixinNetworkManager"
 ]
 }

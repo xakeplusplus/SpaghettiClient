@@ -2,6 +2,7 @@ package me.xakeplusplus.spg.module;
 
 import com.lukflug.panelstudio.settings.Toggleable;
 
+import me.xakeplusplus.spg.SpaghettiClient;
 import net.minecraftforge.common.MinecraftForge;
 
 public class Module {
@@ -54,10 +55,12 @@ public class Module {
 
     public void onEnable() {
         MinecraftForge.EVENT_BUS.register(this);
+        SpaghettiClient.log.info(this.getName() + " enabled");
     }
 
     public void onDisable() {
         MinecraftForge.EVENT_BUS.unregister(this);
+        SpaghettiClient.log.info(this.getName() + " disabled");
     }
 
     public void onUpdate() {}
