@@ -24,13 +24,13 @@ public class Discord {
         discordRichPresence.largeImageKey = "th-3201710860";
         discordRichPresence.largeImageText = "https://github.com/xakeplusplus/SpaghettiClient";
         if(Minecraft.getMinecraft().player != null && Minecraft.getMinecraft().world != null) {
-        	discordRichPresence.details = Minecraft.getMinecraft().player.getName();
+        	discordRichPresence.details = "SpaghettiClient v" + Reference.VERSION;
         }
         else {
         	discordRichPresence.details = "In the menu.";
         }
         
-        discordRichPresence.state = "SpaghettiClient v" + Reference.VERSION;
+        discordRichPresence.state = Minecraft.getMinecraft().player.getName();
         discordRPC.Discord_UpdatePresence(discordRichPresence);
         SpaghettiClient.log.info("discord rpc started");
 	}
