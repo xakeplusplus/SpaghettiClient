@@ -2,6 +2,7 @@ package me.xakeplusplus.spg.module;
 
 import me.xakeplusplus.spg.SpaghettiClient;
 import me.xakeplusplus.spg.module.modules.movement.*;
+import net.minecraftforge.common.MinecraftForge;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +13,7 @@ public class ModuleManager {
 
     public ModuleManager() {
         (modules = new ArrayList<Module>()).clear();
+        MinecraftForge.EVENT_BUS.register(this);
         this.modules.add(new Sprint());
     }
 

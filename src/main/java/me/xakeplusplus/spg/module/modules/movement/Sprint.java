@@ -10,7 +10,8 @@ public class Sprint extends Module {
 	private Minecraft mc = Minecraft.getMinecraft();
 	
     public Sprint() {
-    	super("Sprint", Category.MOVEMENT, Keyboard.KEY_M);
+    	super("Sprint", Category.MOVEMENT);
+    	this.setKey(Keyboard.KEY_M);
     }
     
     @Override

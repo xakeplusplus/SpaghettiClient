@@ -1,5 +1,7 @@
 package me.xakeplusplus.spg.module;
 
+import com.lukflug.panelstudio.settings.Toggleable;
+
 import net.minecraftforge.common.MinecraftForge;
 
 public class Module {
@@ -8,7 +10,7 @@ public class Module {
     private Category category;
     public boolean toggled;
 
-    public Module(String name, Category category, int key) {
+    public Module(String name, Category category) {
         super();
         this.name = name;
         this.category = category;
@@ -61,6 +63,5 @@ public class Module {
     public void onUpdate() {}
 
     public void onRender() {}
-
 
 }
