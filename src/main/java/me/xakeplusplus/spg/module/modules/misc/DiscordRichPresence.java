@@ -10,7 +10,6 @@ public class DiscordRichPresence extends Module {
 	public DiscordRichPresence() {
 		super("DiscordRPC", Category.MISC);
 		this.setKey(Keyboard.KEY_U);
-		this.setToggled(true);
 	}
 	
 	@Override

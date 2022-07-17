@@ -3,6 +3,7 @@ package me.xakeplusplus.spg;
 import me.xakeplusplus.spg.event.EventProcessor;
 import me.xakeplusplus.spg.module.Module;
 import me.xakeplusplus.spg.module.ModuleManager;
+import me.xakeplusplus.spg.ui.clickgui.ClickGui;
 import me.zero.alpine.EventManager;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.common.MinecraftForge;
@@ -22,6 +23,7 @@ public class SpaghettiClient {
     public static ModuleManager moduleManager;
     public static EventProcessor eventProcessor;
     public static final EventManager EVENT_BUS = new EventManager();
+    public static ClickGui clickGui;
     public static final Logger log = LogManager.getLogger("spaghetti-client");
     
     @Mod.Instance
@@ -35,6 +37,8 @@ public class SpaghettiClient {
         log.info("Module Manager Initialized");
         eventProcessor = new EventProcessor();
         log.info("Event Processor Initialized.");
+        clickGui = new ClickGui();
+        log.info("ClickGui Initialized");
     }
 
     @SubscribeEvent

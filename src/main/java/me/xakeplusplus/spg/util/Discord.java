@@ -29,7 +29,7 @@ public class Discord {
         
         discordRichPresence.details = "SpaghettiClient v" + Reference.VERSION;
         discordRPC.Discord_UpdatePresence(discordRichPresence);
-        SpaghettiClient.log.info("discord rpc started");
+        SpaghettiClient.log.info("Discord RPC Started");
 	}
 	
 	public static void stoprpc() {

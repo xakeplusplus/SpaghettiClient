@@ -2,25 +2,27 @@ package me.xakeplusplus.spg.module.modules.render;
 
 import org.lwjgl.input.Keyboard;
 
+import me.xakeplusplus.spg.SpaghettiClient;
 import me.xakeplusplus.spg.module.Category;
 import me.xakeplusplus.spg.module.Module;
 import net.minecraft.client.Minecraft;
 
-public class Fullbright extends Module {
-	public Fullbright() {
-		super("Fullbright", Category.RENDER);
-		this.setKey(Keyboard.KEY_P);
+public class ClickGuiModule extends Module {
+	public ClickGuiModule() {
+		super("ClickGUI", Category.RENDER);
+		this.setKey(Keyboard.KEY_RSHIFT);
 	}
 	
 	@Override
 	public void onEnable() {
 		super.onEnable();
-		Minecraft.getMinecraft().gameSettings.gammaSetting = 2000;
+		Minecraft.getMinecraft().displayGuiScreen(SpaghettiClient.clickGui);
+		//toggle();
 	}
-	
+
 	@Override
 	public void onDisable() {
 		super.onDisable();
-		Minecraft.getMinecraft().gameSettings.gammaSetting = 1.0f;
 	}
+
 }
