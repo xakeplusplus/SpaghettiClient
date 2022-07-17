@@ -14,23 +14,20 @@ public class Discord {
 	
 	public static void startrpc() {
 		DiscordEventHandlers eventHandlers = new DiscordEventHandlers();
-        eventHandlers.disconnected = ((var1, var2) -> System.out.println("Discord RPC disconnected, var1: " + var1 + ", var2: " + var2));
 
         discordRPC.Discord_Initialize(discordID, eventHandlers, true, null);
-
-        
         
         discordRichPresence.startTimestamp = System.currentTimeMillis() / 1000L;
         discordRichPresence.largeImageKey = "th-3201710860";
         discordRichPresence.largeImageText = "https://github.com/xakeplusplus/SpaghettiClient";
         if(Minecraft.getMinecraft().player != null && Minecraft.getMinecraft().world != null) {
-        	discordRichPresence.details = Minecraft.getMinecraft().player.getName();
+        	discordRichPresence.state = Minecraft.getMinecraft().player.getName();
         }
         else {
-        	discordRichPresence.details = "In the menu.";
+        	discordRichPresence.state = "In the menu.";
         }
         
-        discordRichPresence.state = "SpaghettiClient v" + Reference.VERSION;
+        discordRichPresence.details = "SpaghettiClient v" + Reference.VERSION;
         discordRPC.Discord_UpdatePresence(discordRichPresence);
         SpaghettiClient.log.info("discord rpc started");
 	}
