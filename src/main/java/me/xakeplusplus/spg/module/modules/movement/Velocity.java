@@ -12,6 +12,8 @@ import net.minecraft.network.play.server.SPacketEntityVelocity;
 import net.minecraft.network.play.server.SPacketExplosion;
 
 public class Velocity extends Module {
+	private Minecraft mc = Minecraft.getMinecraft();
+	
 	public Velocity() {
 		super ("Velocity", Category.MOVEMENT);
 		this.setKey(Keyboard.KEY_N);
@@ -20,12 +22,15 @@ public class Velocity extends Module {
 	@EventHandler
 	private Listener<PacketEvent.Receive> receiveListener = new Listener<>(event -> {
 		if (event.getPacket() instanceof SPacketEntityVelocity) {
-			if (((SPacketEntityVelocity) event.getPacket()).getEntityID() == Minecraft.getMinecraft().player.getEntityId())
-				event.cancel();
-			
-			if (event.getPacket() instanceof SPacketExplosion) {
-				event.cancel();
-			}
+			if (event.getPacket() instanceof SPacketEntityVelocity) {
+	            if (((SPacketEntityVelocity) event.getPacket()).getEntityID() == mc.player.getEntityId()) {
+	                event.cancel();
+	            }
+	        }
+
+	        if (event.getPacket() instanceof SPacketExplosion) {
+	            event.cancel();
+	        }
 		}
 	});
 }

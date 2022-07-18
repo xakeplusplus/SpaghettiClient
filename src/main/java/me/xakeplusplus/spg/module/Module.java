@@ -3,6 +3,7 @@ package me.xakeplusplus.spg.module;
 import com.lukflug.panelstudio.settings.Toggleable;
 
 import me.xakeplusplus.spg.SpaghettiClient;
+import me.xakeplusplus.spg.setting.Setting;
 import net.minecraftforge.common.MinecraftForge;
 
 public class Module {
@@ -66,5 +67,13 @@ public class Module {
     public void onUpdate() {}
 
     public void onRender() {}
+    
+    protected final void rSetting(Setting setting) {
+    	SpaghettiClient.instance.getSettingsManager().rSetting(setting);
+    }
+    
+    protected final Setting getSetting(String name) {
+    	return SpaghettiClient.instance.getSettingsManager().getSettingByName(name);
+    }
 
 }

@@ -21,6 +21,7 @@ public class ModuleManager {
         this.modules.add(new Fullbright());
         this.modules.add(new DiscordRichPresence());
         this.modules.add(new ClickGuiModule());
+        this.modules.add(new Step());
     }
 
     public void onUpdate() {
