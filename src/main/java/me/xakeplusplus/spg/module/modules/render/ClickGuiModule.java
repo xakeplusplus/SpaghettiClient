@@ -15,12 +15,7 @@ public class ClickGuiModule extends Module {
 	
 	@Override
 	public void onEnable() {
-		super.onEnable();
 		Minecraft.getMinecraft().displayGuiScreen(SpaghettiClient.instance.clickGui);
-	}
-
-	@Override
-	public void onDisable() {
-		super.onDisable();
+		setToggled(false);
 	}
 }

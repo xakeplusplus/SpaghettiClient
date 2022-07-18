@@ -17,11 +17,10 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.ScaledResolution;
+
 /*
  * TOOK THE CLICKGUI FROM EXEOS THEN IMPROVED IT MYSELF
  */
-
-
 
 public class ClickGui extends GuiScreen {
 	private Minecraft mc = Minecraft.getMinecraft();
@@ -95,6 +94,7 @@ public class ClickGui extends GuiScreen {
         for (Category category : Category.values()) {
             if (isInside(mouseX, mouseY,posX,posY + 1 + offset,posX + 60,posY + 15 + offset) && mouseButton == 0) {
                 selectedCategory = category;
+                comps.clear();
             }
             offset += 15;
         }
