@@ -1,5 +1,10 @@
 package me.xakeplusplus.spg.util;
 
+import java.awt.Color;
+
+import org.lwjgl.opengl.GL11;
+
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 
 public class DrawingUtils {
@@ -14,4 +19,10 @@ public class DrawingUtils {
         // Middle rect
         Gui.drawRect(x, y + 1, width, height - 1, color);
 	}
+	
+	public static void drawRoundedRectb(int x, int y, int width, int height, int cornerRadius, Color color) {
+	     Gui.drawRect(x, y + cornerRadius, x + cornerRadius, y + height - cornerRadius, color.getRGB());
+	     Gui.drawRect(x + cornerRadius, y, x + width - cornerRadius, y + height, color.getRGB());
+	     Gui.drawRect(x + width - cornerRadius, y + cornerRadius, x + width, y + height - cornerRadius, color.getRGB());
+   }
 }

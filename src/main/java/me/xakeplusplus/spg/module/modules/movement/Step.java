@@ -13,12 +13,24 @@ public class Step extends Module {
 		super("Step", Category.MOVEMENT);
 		this.setKey(Keyboard.KEY_NONE);
 		
-		rSetting(new Setting("Step Height", this, 2, 0.5, 2.5, false));
+		rSetting(new Setting("Step Height", this, 2, 0.5, 3, false));
+		rSetting(new Setting("When Sneaking", this, true));
 	}
 	
 	@Override
 	public void onUpdate() {
-		Minecraft.getMinecraft().player.stepHeight = (float) getSetting("Step Height").getValDouble();
+		
+		if (this.getSetting("When Sneaking").getValBoolean()) {
+			
+		} else {
+			if (Minecraft.getMinecraft().player.isSneaking())
+				Minecraft.getMinecraft().player.stepHeight = 0.5f;
+			else {
+				Minecraft.getMinecraft().player.stepHeight = (float) getSetting("Step Height").getValDouble();
+			}
+			
+		}
+		
 	}
 
 	@Override

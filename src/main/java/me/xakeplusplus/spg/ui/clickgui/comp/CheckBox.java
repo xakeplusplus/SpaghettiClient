@@ -20,8 +20,8 @@ public class CheckBox extends Comp {
     @Override
     public void drawScreen(int mouseX, int mouseY) {
         super.drawScreen(mouseX, mouseY);
-        Gui.drawRect(parent.posX + x - 70, parent.posY + y, parent.posX + x + 10 - 70, parent.posY + y + 10,setting.getValBoolean() ? new Color(144,234,238).getRGB() : new Color(40,40,40).getRGB());
-        Minecraft.getMinecraft().fontRenderer.drawString(setting.getName(), (int)(parent.posX + x - 55), (int)(parent.posY + y + 1), new Color(243,65,184).brighter().getRGB());
+        Gui.drawRect(parent.posX + x - 70, parent.posY + y, parent.posX + x + 10 - 70, parent.posY + y + 10,setting.getValBoolean() ? new Color(243,65,184).getRGB() : new Color(243, 65, 184, 60).getRGB());
+        Minecraft.getMinecraft().fontRenderer.drawString(setting.getName(), (int)(parent.posX + x - 55), (int)(parent.posY + y + 1), -1);
     }
 
     @Override

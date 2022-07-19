@@ -59,7 +59,7 @@ public class Slider extends Comp {
                 setting.setValDouble(newValue);
             }
         }
-        Gui.drawRect(parent.posX + x - 70, parent.posY + y + 10,(int) (parent.posX + x - 70 + renderWidth2), parent.posY + y + 20, new Color(243,65,184).darker().getRGB());
+        Gui.drawRect(parent.posX + x - 70, parent.posY + y + 10,(int) (parent.posX + x - 70 + renderWidth2), parent.posY + y + 20, new Color(243,65,184, 230).darker().getRGB());
         Gui.drawRect(parent.posX + x - 70, parent.posY + y + 10, (int) (parent.posX + x - 70 + renderWidth), parent.posY + y + 20, new Color(243,65,184).getRGB());
         Minecraft.getMinecraft().fontRenderer.drawString(setting.getName() + ": " + setting.getValDouble(),(int)(parent.posX + x - 70),(int)(parent.posY + y), -1);
     }

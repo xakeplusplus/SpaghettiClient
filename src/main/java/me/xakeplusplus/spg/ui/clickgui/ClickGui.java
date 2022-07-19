@@ -12,6 +12,7 @@ import me.xakeplusplus.spg.ui.clickgui.comp.CheckBox;
 import me.xakeplusplus.spg.ui.clickgui.comp.Combo;
 import me.xakeplusplus.spg.ui.clickgui.comp.Comp;
 import me.xakeplusplus.spg.ui.clickgui.comp.Slider;
+import me.xakeplusplus.spg.util.DrawingUtils;
 import me.xakeplusplus.spg.util.RainbowColor;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
@@ -36,8 +37,8 @@ public class ClickGui extends GuiScreen {
 
     public ClickGui() {
         dragging = false;
-        posX = getScaledRes().getScaledWidth() / 2 - 150;
-        posY = getScaledRes().getScaledHeight() / 2 - 100;
+        posX = getScaledRes().getScaledWidth() / 2; // -150
+        posY = getScaledRes().getScaledHeight() / 2; // -100
         width = posX + 150 * 2;
         height = height + 200;
         selectedCategory = Category.COMBAT;
@@ -50,11 +51,13 @@ public class ClickGui extends GuiScreen {
             posX = mouseX - dragX;
             posY = mouseY - dragY;
         }
-        width = posX + 150 * 2;
+        width = posX + 300;
         height = posY + 200;
         Gui.drawRect(posX, posY - 10, width, posY, new Color(144,234,238).getRGB());
-        Gui.drawRect(posX, posY, width, height, new Color(40,40,40).getRGB());
-
+        //DrawingUtils.drawRoundedRect(posX, posY - 10, width, posY, new Color(144,234,238).getRGB());
+        Gui.drawRect(posX, posY, width, height, new Color(40,40,40, 250).getRGB());
+        //DrawingUtils.drawRoundedRect(posX, posY, width, height, new Color(40,40,40).getRGB());
+        
         int offset = 0;
         for (Category category : Category.values()) {
             Gui.drawRect(posX,posY + 1 + offset,posX + 60,posY + 15 + offset,category.equals(selectedCategory) ? new Color(118, 150, 250).getRGB() : new Color(91, 91, 91).darker().getRGB());
