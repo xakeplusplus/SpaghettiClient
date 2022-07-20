@@ -16,21 +16,12 @@ public class Sprint extends Module {
     	super("Sprint", Category.MOVEMENT);
     	this.setKey(Keyboard.KEY_NONE);
     	
-    	ArrayList<String> options = new ArrayList<>();
-    	options.add("Auto Sprint");
-    	options.add("Normal");
-    	rSetting(new Setting("Mode", this, "Normal", options));
-    	
     }
     
     @Override
     public void onUpdate() {
-    	if (getSetting("Mode").getValString() == "Auto Sprint") {
+		if (mc.player.moveForward > 0 && !mc.player.isSneaking() && !mc.player.collidedHorizontally) {
     		mc.player.setSprinting(true);
-    	} else {
-    		if (mc.player.moveForward > 0 && !mc.player.isSneaking() && !mc.player.collidedHorizontally) {
-        		mc.player.setSprinting(true);
-        	}
     	}
     }
 }

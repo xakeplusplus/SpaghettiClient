@@ -23,6 +23,12 @@ import net.minecraft.client.gui.ScaledResolution;
  * TOOK THE CLICKGUI FROM EXEOS THEN IMPROVED IT MYSELF
  */
 
+/*
+ * I'll give you mini hint: check book gui and use the same method to draw a picture behind the text, a picture of your own choice which could also be a round box. then override the default button box
+ */
+
+
+
 public class ClickGui extends GuiScreen {
 	private Minecraft mc = Minecraft.getMinecraft();
 	
@@ -66,7 +72,7 @@ public class ClickGui extends GuiScreen {
         }
         offset = 0;
         for (Module m : SpaghettiClient.moduleManager.getModulesByCategory(selectedCategory)) {
-            Gui.drawRect(posX + 65,posY + 1 + offset,posX + 125,posY + 15 + offset,m.isToggled() ? new Color(120,121,250).getRGB() : new Color(40, 40, 40).getRGB());
+            Gui.drawRect(posX + 65,posY + 1 + offset,posX + 155,posY + 15 + offset,m.isToggled() ? new Color(120,121,250).getRGB() : new Color(123, 149, 136, 180).darker().getRGB());
             fontRenderer.drawString(m.getName(),(int)posX + 67, (int)(posY + 5) + offset, new Color(255, 210, 117).getRGB());
             offset += 15;
         }

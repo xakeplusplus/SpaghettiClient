@@ -1,6 +1,7 @@
 package me.xakeplusplus.spg.module;
 
 import me.xakeplusplus.spg.SpaghettiClient;
+import me.xakeplusplus.spg.module.modules.chat.*;
 import me.xakeplusplus.spg.module.modules.misc.*;
 import me.xakeplusplus.spg.module.modules.movement.*;
 import me.xakeplusplus.spg.module.modules.render.*;
@@ -22,6 +23,7 @@ public class ModuleManager {
         this.modules.add(new DiscordRichPresence());
         this.modules.add(new ClickGuiModule());
         this.modules.add(new Step());
+        this.modules.add(new ChatNotifications());
     }
 
     public void onUpdate() {
