@@ -1,6 +1,6 @@
-package me.xakeplusplus.spg.event.events;
+package me.xakeplusplus.spg.events;
 
-import me.xakeplusplus.spg.event.Event;
+import net.minecraftforge.fml.common.eventhandler.Event;
 
 public class PlayerUpdateEvent extends Event {
 	public PlayerUpdateEvent() {

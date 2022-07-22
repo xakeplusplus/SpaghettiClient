@@ -1,6 +1,6 @@
 package me.xakeplusplus.spg.module;
 
-import com.lukflug.panelstudio.settings.Toggleable;
+
 import com.mojang.realmsclient.gui.ChatFormatting;
 
 import me.xakeplusplus.spg.SpaghettiClient;
@@ -13,7 +13,7 @@ import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.common.MinecraftForge;
 
 public class Module {
-	private Minecraft mc = Minecraft.getMinecraft();
+	public static Minecraft mc = Minecraft.getMinecraft();
 	
     public String name;
     private int key;

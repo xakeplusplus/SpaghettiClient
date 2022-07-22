@@ -1,4 +1,4 @@
-package me.xakeplusplus.spg.event;
+package me.xakeplusplus.spg.events;
 
 import me.xakeplusplus.spg.SpaghettiClient;
 import net.minecraft.client.Minecraft;
