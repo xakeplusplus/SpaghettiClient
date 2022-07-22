@@ -18,19 +18,19 @@ public class Velocity extends Module {
 	public static Velocity instance = new Velocity();
 	
 	public Velocity() {
-		super ("Velocity", Category.MOVEMENT);
+		super("Velocity", Category.MOVEMENT);
 	}
 	
 	@Override
 	public void onEnable() {
 		super.onEnable();
-		SpaghettiClient.EVENT_BUS.register(this);
+		SpaghettiClient.EVENT_BUS.register(instance);
 	}
 
 	@Override
 	public void onDisable() {
 		super.onDisable();
-		SpaghettiClient.EVENT_BUS.unregister(this);
+		SpaghettiClient.EVENT_BUS.unregister(instance);
 	}
 
 	@SubscribeEvent

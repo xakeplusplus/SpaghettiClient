@@ -5,6 +5,7 @@ import com.mojang.realmsclient.gui.ChatFormatting;
 import me.xakeplusplus.spg.Reference;
 import me.xakeplusplus.spg.SpaghettiClient;
 import me.xakeplusplus.spg.command.Command;
+import net.minecraft.util.text.TextComponentString;
 
 public class Prefix extends Command {
 	
@@ -18,7 +19,7 @@ public class Prefix extends Command {
 		if (args.length == 1) {
 			String newPrefix = args[0];
 			SpaghettiClient.commandManager.setCommandPrefix(newPrefix);
-			mc.player.sendChatMessage(ChatFormatting.GOLD + "[" + Reference.NAME + "]" + ChatFormatting.RESET + " " + ChatFormatting.AQUA + "Prefix" + ChatFormatting.RESET + " was set to" + ChatFormatting.ITALIC + " " + ChatFormatting.BOLD + "" + ChatFormatting.DARK_GRAY + newPrefix);;
+			mc.player.sendMessage(new TextComponentString(ChatFormatting.GOLD + "[" + Reference.NAME + "]" + ChatFormatting.RESET + " " + ChatFormatting.AQUA + "Prefix" + ChatFormatting.RESET + " was set to" + ChatFormatting.ITALIC + " " + ChatFormatting.BOLD + "" + ChatFormatting.RED + newPrefix));
 		}
 	}
 }

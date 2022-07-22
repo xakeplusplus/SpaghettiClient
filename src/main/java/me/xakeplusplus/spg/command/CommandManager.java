@@ -9,6 +9,7 @@ import me.xakeplusplus.spg.Reference;
 import me.xakeplusplus.spg.SpaghettiClient;
 import me.xakeplusplus.spg.command.commands.*;
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.client.event.ClientChatEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -50,7 +51,7 @@ public class CommandManager {
 						}
 					}
 					if (!commandFound) {
-						mc.player.sendChatMessage(ChatFormatting.GOLD + "[" + Reference.NAME + "]" + ChatFormatting.RESET + " " + "Command was not found:" + ChatFormatting.RESET + " " + ChatFormatting.ITALIC + "" + ChatFormatting.RED + "" + ChatFormatting.BOLD + commandName);;
+						mc.player.sendMessage(new TextComponentString(ChatFormatting.GOLD + "[" + Reference.NAME + "]" + ChatFormatting.RESET + " " + "Command was not found:" + ChatFormatting.RESET + " " + ChatFormatting.ITALIC + "" + ChatFormatting.RED + "" + ChatFormatting.BOLD + commandName));
 					}
 				}
 			}
@@ -59,7 +60,7 @@ public class CommandManager {
 	
 	public void sendCommandDescriptions() {
 		for(Command c : SpaghettiClient.commandManager.commands) {
-			mc.player.sendChatMessage("---------------\n" + ChatFormatting.BOLD + "" + ChatFormatting.DARK_GRAY +  c.name + ChatFormatting.RESET +  " - " + c.description + ChatFormatting.BOLD + "" + ChatFormatting.AQUA + " [\"" + c.syntax + "\"]" + "---------------\n");
+			mc.player.sendMessage(new TextComponentString("---------------\n" + ChatFormatting.BOLD + "" + ChatFormatting.DARK_GRAY +  c.name + ChatFormatting.RESET +  " - " + c.description + ChatFormatting.BOLD + "" + ChatFormatting.AQUA + " [\"" + c.syntax + "\"]" + "---------------\n"));
 		}
 	}
 	
