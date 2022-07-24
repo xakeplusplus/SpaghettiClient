@@ -12,15 +12,11 @@ public class Fullbright extends Module {
 		this.setKey(Keyboard.KEY_P);
 	}
 	
-	@Override
 	public void onEnable() {
-		super.onEnable();
 		Minecraft.getMinecraft().gameSettings.gammaSetting = 2000;
 	}
 	
-	@Override
 	public void onDisable() {
-		super.onDisable();
 		Minecraft.getMinecraft().gameSettings.gammaSetting = 1.0f;
 	}
 }

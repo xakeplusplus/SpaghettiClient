@@ -3,6 +3,7 @@ package me.xakeplusplus.spg.module;
 import me.xakeplusplus.spg.SpaghettiClient;
 import me.xakeplusplus.spg.module.modules.chat.*;
 import me.xakeplusplus.spg.module.modules.combat.*;
+import me.xakeplusplus.spg.module.modules.exploits.*;
 import me.xakeplusplus.spg.module.modules.misc.*;
 import me.xakeplusplus.spg.module.modules.movement.*;
 import me.xakeplusplus.spg.module.modules.render.*;
@@ -30,6 +31,7 @@ public class ModuleManager {
         this.modules.add(new Offhand());
         this.modules.add(new AutoRespawn());
         this.modules.add(new NoFall());
+        this.modules.add(new XCarry());
     }
 
     public void onUpdate() {
