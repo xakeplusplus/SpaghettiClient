@@ -1,16 +1,11 @@
 package me.xakeplusplus.spg.module.modules.movement;
 
-import org.lwjgl.input.Keyboard;
-
 import me.xakeplusplus.spg.SpaghettiClient;
 import me.xakeplusplus.spg.events.PacketEvent;
 import me.xakeplusplus.spg.module.Category;
 import me.xakeplusplus.spg.module.Module;
-import me.zero.alpine.listener.EventHandler;
-import me.zero.alpine.listener.Listener;
 import net.minecraft.network.play.server.SPacketEntityVelocity;
 import net.minecraft.network.play.server.SPacketExplosion;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class Velocity extends Module {
