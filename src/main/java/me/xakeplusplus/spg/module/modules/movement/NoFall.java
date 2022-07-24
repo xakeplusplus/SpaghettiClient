@@ -5,9 +5,6 @@ import org.lwjgl.input.Keyboard;
 import me.xakeplusplus.spg.events.NetworkPacketEvent;
 import me.xakeplusplus.spg.module.Category;
 import me.xakeplusplus.spg.module.Module;
-import me.zero.alpine.listener.EventHandler;
-import me.zero.alpine.listener.Listener;
-import net.minecraft.client.Minecraft;
 import net.minecraft.network.play.client.CPacketPlayer;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
