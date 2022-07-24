@@ -33,6 +33,8 @@ public class ModuleManager {
         this.modules.add(new NoFall());
         this.modules.add(new XCarry());
         this.modules.add(new Hud());
+        this.modules.add(new ChatSuffix());
+        this.modules.add(new GreenText());
     }
 
     public void onUpdate() {
