@@ -16,18 +16,8 @@ public class Velocity extends Module {
 		super("Velocity", Category.MOVEMENT);
 	}
 	
-	public void onEnable() {
-		SpaghettiClient.EVENT_BUS.register(instance);
-	}
-
-	public void onDisable() {
-		SpaghettiClient.EVENT_BUS.unregister(instance);
-	}
-
 	@SubscribeEvent
     public void receivePacket(PacketEvent.Receive event) {
-		System.out.println("Packet Received");
-		
         if (event.getPacket() instanceof SPacketEntityVelocity) {
             if (((SPacketEntityVelocity) event.getPacket()).getEntityID() == mc.player.getEntityId()) {
                 event.setCanceled(true);

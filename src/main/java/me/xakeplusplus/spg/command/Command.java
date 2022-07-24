@@ -1,7 +1,5 @@
 package me.xakeplusplus.spg.command;
 
-import com.mojang.realmsclient.gui.ChatFormatting;
-
 import net.minecraft.client.Minecraft;
 
 public abstract class Command {

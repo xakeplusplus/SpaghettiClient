@@ -9,7 +9,6 @@ import org.apache.logging.log4j.Logger;
 import org.spongepowered.asm.launch.MixinBootstrap;
 import org.spongepowered.asm.mixin.Mixins;
 
-import me.xakeplusplus.spg.SpaghettiClient;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
  
 public class MixinLoader implements IFMLLoadingPlugin {

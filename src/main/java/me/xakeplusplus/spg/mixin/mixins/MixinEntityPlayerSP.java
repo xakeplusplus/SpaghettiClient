@@ -1,9 +1,6 @@
 package me.xakeplusplus.spg.mixin.mixins;
 
-import com.mojang.authlib.GameProfile;
-import net.minecraft.client.entity.AbstractClientPlayer;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -17,7 +14,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
 
 @Mixin(EntityPlayerSP.class)
-public abstract class MixinEntityPlayerSP extends AbstractClientPlayer {
+public abstract class MixinEntityPlayerSP extends EntityPlayer {
 
 	/*public MixinEntityPlayerSP(World worldIn, GameProfile gameProfileIn) {
 		super(worldIn, gameProfileIn);

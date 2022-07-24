@@ -5,7 +5,6 @@ import org.lwjgl.input.Keyboard;
 import me.xakeplusplus.spg.module.Category;
 import me.xakeplusplus.spg.module.Module;
 import me.xakeplusplus.spg.setting.Setting;
-import net.minecraft.client.Minecraft;
 
 public class ReverseStep extends Module {
 	
