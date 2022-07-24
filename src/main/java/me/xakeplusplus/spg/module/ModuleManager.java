@@ -32,6 +32,7 @@ public class ModuleManager {
         this.modules.add(new AutoRespawn());
         this.modules.add(new NoFall());
         this.modules.add(new XCarry());
+        this.modules.add(new Hud());
     }
 
     public void onUpdate() {

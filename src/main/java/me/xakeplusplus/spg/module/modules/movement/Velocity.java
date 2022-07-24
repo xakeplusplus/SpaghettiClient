@@ -10,8 +10,6 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class Velocity extends Module {
 	
-	public static Velocity instance = new Velocity();
-	
 	public Velocity() {
 		super("Velocity", Category.MOVEMENT);
 	}
