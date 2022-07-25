@@ -1,4 +1,4 @@
-package me.xakeplusplus.spg.module.modules.exploits;
+package me.xakeplusplus.spg.module.modules.player;
 
 import org.lwjgl.input.Keyboard;
 
@@ -11,7 +11,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class XCarry extends Module {
 
 	public XCarry() {
-		super("XCarry", Category.EXPLOITS);
+		super("XCarry", Category.PLAYER);
 		this.setKey(Keyboard.KEY_NONE);
 	}
 	

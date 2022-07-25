@@ -1,4 +1,4 @@
-package me.xakeplusplus.spg.module.modules.exploits;
+package me.xakeplusplus.spg.module.modules.player;
 
 import me.xakeplusplus.spg.events.CanCollideCheckEvent;
 import me.xakeplusplus.spg.module.Category;
@@ -8,7 +8,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class LiquidPlace extends Module {
 
     public LiquidPlace() {
-        super("Liquid Place", Category.EXPLOITS);
+        super("Liquid Place", Category.PLAYER);
     }
 
     @SubscribeEvent

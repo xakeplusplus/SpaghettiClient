@@ -6,6 +6,7 @@ import me.xakeplusplus.spg.module.modules.combat.*;
 import me.xakeplusplus.spg.module.modules.exploits.*;
 import me.xakeplusplus.spg.module.modules.misc.*;
 import me.xakeplusplus.spg.module.modules.movement.*;
+import me.xakeplusplus.spg.module.modules.player.*;
 import me.xakeplusplus.spg.module.modules.render.*;
 import net.minecraftforge.common.MinecraftForge;
 

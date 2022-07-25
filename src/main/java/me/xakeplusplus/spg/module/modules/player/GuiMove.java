@@ -1,4 +1,4 @@
-package me.xakeplusplus.spg.module.modules.exploits;
+package me.xakeplusplus.spg.module.modules.player;
 
 import me.xakeplusplus.spg.module.Category;
 import me.xakeplusplus.spg.module.Module;
@@ -8,7 +8,7 @@ import org.lwjgl.input.Keyboard;
 public class GuiMove extends Module {
 
     public GuiMove() {
-        super("Gui Move", Category.EXPLOITS);
+        super("Gui Move", Category.PLAYER);
     }
 
     @Override

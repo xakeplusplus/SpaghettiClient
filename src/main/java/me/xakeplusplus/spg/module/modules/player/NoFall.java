@@ -1,4 +1,4 @@
-package me.xakeplusplus.spg.module.modules.movement;
+package me.xakeplusplus.spg.module.modules.player;
 
 import org.lwjgl.input.Keyboard;
 
@@ -10,7 +10,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class NoFall extends Module {
 	public NoFall() {
-		super("NoFall", Category.MOVEMENT);
+		super("NoFall", Category.PLAYER);
 		this.setKey(Keyboard.KEY_NONE);
 	}
 	

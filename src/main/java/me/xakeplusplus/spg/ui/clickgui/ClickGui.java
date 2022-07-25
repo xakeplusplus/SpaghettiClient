@@ -27,8 +27,6 @@ import net.minecraft.client.gui.ScaledResolution;
  * I'll give you mini hint: check book gui and use the same method to draw a picture behind the text, a picture of your own choice which could also be a round box. then override the default button box
  */
 
-
-
 public class ClickGui extends GuiScreen {
 	private Minecraft mc = Minecraft.getMinecraft();
 	
