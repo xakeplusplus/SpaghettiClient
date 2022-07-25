@@ -35,6 +35,9 @@ public class ModuleManager {
         this.modules.add(new Hud());
         this.modules.add(new ChatSuffix());
         this.modules.add(new GreenText());
+        this.modules.add(new GuiMove());
+        this.modules.add(new LiquidPlace());
+        this.modules.add(new PortalGodMode());
     }
 
     public void onUpdate() {

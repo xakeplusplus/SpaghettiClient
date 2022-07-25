@@ -61,7 +61,7 @@ public class ClickGui extends GuiScreen {
         height = posY + 200;
         Gui.drawRect(posX, posY - 10, width, posY, new Color(144,234,238).getRGB());
         //DrawingUtils.drawRoundedRect(posX, posY - 10, width, posY, new Color(144,234,238).getRGB());
-        Gui.drawRect(posX, posY, width, height, new Color(40,40,40, 250).getRGB());
+        Gui.drawRect(posX, posY, width, height, new Color(40,40,40, 180).getRGB());
         //DrawingUtils.drawRoundedRect(posX, posY, width, height, new Color(40,40,40).getRGB());
         
         int offset = 0;
