@@ -1,7 +1,6 @@
 package me.xakeplusplus.spg.mixin.mixins;
 
 import me.xakeplusplus.spg.SpaghettiClient;
-import me.xakeplusplus.spg.events.CanCollideCheckEvent;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.block.state.IBlockState;
 import org.spongepowered.asm.mixin.Mixin;
@@ -14,8 +13,6 @@ public class MixinBlockLiquid {
 
     @Inject(method = "canCollideCheck", at = @At("HEAD"), cancellable = true)
     public void canCollideCheck(final IBlockState blockState, final boolean b, final CallbackInfoReturnable<Boolean> callbackInfoReturnable) {
-        CanCollideCheckEvent event = new CanCollideCheckEvent();
-        SpaghettiClient.EVENT_BUS.post(event);
-        callbackInfoReturnable.setReturnValue(event.isCanceled());
+        callbackInfoReturnable.setReturnValue(SpaghettiClient.moduleManager.getModule("Liquid Place").isToggled() || (b && blockState.getValue(BlockLiquid.LEVEL) == 0));
     }
 }

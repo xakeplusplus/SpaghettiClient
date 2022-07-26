@@ -39,6 +39,7 @@ public class ModuleManager {
         this.modules.add(new GuiMove());
         this.modules.add(new LiquidPlace());
         this.modules.add(new PortalGodMode());
+        this.modules.add(new FakePlayer());
     }
 
     public void onUpdate() {
