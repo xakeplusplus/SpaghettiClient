@@ -4,6 +4,8 @@ import com.mojang.authlib.GameProfile;
 import me.xakeplusplus.spg.module.Category;
 import me.xakeplusplus.spg.module.Module;
 import net.minecraft.client.entity.EntityOtherPlayerMP;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 
 import java.util.UUID;
 
@@ -45,5 +47,10 @@ public class FakePlayer extends Module {
                 } catch (Exception e) {
                         e.printStackTrace();
                 }
+        }
+
+        @SubscribeEvent
+        public void onLeave(PlayerEvent.PlayerLoggedOutEvent event) {
+                setToggled(false);
         }
 }

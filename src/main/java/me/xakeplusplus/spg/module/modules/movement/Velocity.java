@@ -1,6 +1,5 @@
 package me.xakeplusplus.spg.module.modules.movement;
 
-import me.xakeplusplus.spg.SpaghettiClient;
 import me.xakeplusplus.spg.events.PacketEvent;
 import me.xakeplusplus.spg.module.Category;
 import me.xakeplusplus.spg.module.Module;

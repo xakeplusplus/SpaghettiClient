@@ -8,9 +8,4 @@ public class LiquidPlace extends Module {
     public LiquidPlace() {
         super("Liquid Place", Category.PLAYER);
     }
-/*
-    @SubscribeEvent
-    public void checkCanCollide(CanCollideCheckEvent event) {
-        event.setCanceled(true);
-    }*/
 }
