@@ -1,9 +1,11 @@
 {
-"required": true,
-"compatibilityLevel": "JAVA_8",
-"package": "me.xakeplusplus.spg.mixin.mixins",
-"refmap": "mixins.spg.refmap.json",
-"mixins": [
-    "MixinEntityPlayerSP"
-]
+    "required": true,
+    "compatibilityLevel": "JAVA_8",
+    "package": "me.xakeplusplus.spg.mixin.mixins",
+    "refmap": "mixins.spg.refmap.json",
+    "mixins": [
+        "MixinEntityPlayerSP",
+        "MixinNetworkManager",
+        "MixinBlockLiquid"
+    ]
 }

@@ -1,10 +1,20 @@
 package me.xakeplusplus.spg.module;
 
-import com.lukflug.panelstudio.settings.Toggleable;
 
+import com.mojang.realmsclient.gui.ChatFormatting;
+
+import me.xakeplusplus.spg.SpaghettiClient;
+import me.xakeplusplus.spg.Reference;
+import me.xakeplusplus.spg.module.modules.chat.ChatNotifications;
+import me.xakeplusplus.spg.setting.Setting;
+import net.minecraft.client.Minecraft;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.common.MinecraftForge;
 
 public class Module {
+	public static Minecraft mc = Minecraft.getMinecraft();
+	
     public String name;
     private int key;
     private Category category;
@@ -54,14 +64,32 @@ public class Module {
 
     public void onEnable() {
         MinecraftForge.EVENT_BUS.register(this);
+        SpaghettiClient.log.info(this.getName() + " enabled");
+        
+        if (ChatNotifications.isOn() && mc.player != null && !this.getName().equalsIgnoreCase("clickgui")) {
+        	mc.player.sendMessage(new TextComponentString(ChatFormatting.GOLD + "[" + Reference.NAME + "]" + ChatFormatting.RESET + " " + ChatFormatting.AQUA + this.getName() + " " + ChatFormatting.RESET + "has been" + ChatFormatting.GREEN + " enabled."));
+        }
     }
 
     public void onDisable() {
         MinecraftForge.EVENT_BUS.unregister(this);
+        SpaghettiClient.log.info(this.getName() + " disabled");
+        
+        if (ChatNotifications.isOn() && mc.player != null && !this.getName().equalsIgnoreCase("clickgui")) {
+        	mc.player.sendMessage(new TextComponentString(ChatFormatting.GOLD + "[" + Reference.NAME + "]" + ChatFormatting.RESET + " " + ChatFormatting.AQUA + this.getName() + " " + ChatFormatting.RESET + "has been" + ChatFormatting.RED + " disabled."));
+        }
     }
 
     public void onUpdate() {}
 
     public void onRender() {}
+    
+    protected final void rSetting(Setting setting) {
+    	SpaghettiClient.instance.getSettingsManager().rSetting(setting);
+    }
+    
+    protected final Setting getSetting(String name) {
+    	return SpaghettiClient.instance.getSettingsManager().getSettingByName(name);
+    }
 
 }
