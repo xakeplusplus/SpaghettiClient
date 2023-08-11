@@ -6,6 +6,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import io.netty.channel.ChannelHandlerContext;
+import me.xakeplusplus.spg.SpaghettiClient;
 import me.xakeplusplus.spg.events.NetworkPacketEvent;
 import me.xakeplusplus.spg.events.PacketEvent;
 import net.minecraft.network.NetworkManager;

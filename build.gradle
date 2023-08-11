@@ -16,14 +16,9 @@ buildscript {
     }
 }
 
-
 apply plugin: "net.minecraftforge.gradle.forge"
 apply plugin: "com.github.johnrengelman.shadow"
 apply plugin: 'org.spongepowered.mixin'
-
-version = "1.0"
-group = "me.xakeplusplus.spg"
-archivesBaseName = "SpaghettiClient"
 
 minecraft {
     version  = "1.12.2-14.23.0.2531"
@@ -109,15 +104,17 @@ processResources {
 jar {
     manifest {
         attributes (
-                'MixinConfigs': 'mixins.spg.json',
-                'tweakClass': 'org.spongepowered.asm.launch.MixinTweaker',
-                'TweakOrder': 0,
-                'FMLCorePluginContainsFMLMod': 'true',
-                'FMLCorePlugin': 'me.xakeplusplus.spg.SpaghettiClient',
-                'ForceLoadAsMod': 'true',
-                'FMLAT': '***_at.cfg'
+                "FMLCorePluginContainsFMLMod" : "true",
+                "ForceLoadAsMod"              : "true",
+                "FMLCorePlugin"               : "me.xakeplusplus.spg.mixin.MixinLoader",
+                "MixinConfigs"                : "mixins.spg.json",
+                "tweakClass"                  : "org.spongepowered.asm.launch.MixinTweaker",
+                "TweakOrder"                  : 0,
+                "FMLAT"                       : "spg_at.cfg"
         )
     }
 }
+
+compileJava.options.encoding = "UTF-8"
 
 build.dependsOn(shadowJar)

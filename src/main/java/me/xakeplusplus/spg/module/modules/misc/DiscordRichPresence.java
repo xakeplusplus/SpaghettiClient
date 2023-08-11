@@ -11,13 +11,16 @@ public class DiscordRichPresence extends Module {
 		super("DiscordRPC", Category.MISC);
 		this.setKey(Keyboard.KEY_U);
 	}
-
+	
+	@Override
 	public void onEnable() {
+		super.onEnable();
 		Discord.startrpc();
 	}
 	
 	@Override
 	public void onDisable() {
+		super.onDisable();
 		Discord.stoprpc();
 	}
 }

@@ -2,11 +2,11 @@ package me.xakeplusplus.spg.module.modules.combat;
 
 import java.util.ArrayList;
 
-import org.lwjgl.input.Keyboard;
+import me.xakeplusplus.spg.setting.settings.NumberSetting;
+import me.xakeplusplus.spg.setting.settings.OptionSetting;
 
 import me.xakeplusplus.spg.module.Category;
 import me.xakeplusplus.spg.module.Module;
-import me.xakeplusplus.spg.setting.Setting;
 import net.minecraft.client.gui.inventory.GuiInventory;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.ClickType;
@@ -15,17 +15,21 @@ import net.minecraft.item.Item;
 public class Offhand extends Module {
 	private boolean isSwitching;
 	private int lastSlot;
+	public OptionSetting modeSetting;
+	public NumberSetting healthSetting;
 
 	public Offhand() {
 		super("Offhand", Category.COMBAT);
-		this.setKey(Keyboard.KEY_NONE);
-		
+
 		ArrayList<String> options = new ArrayList<String>();
 		options.add("Crystal");
 		options.add("GApple");
-		
-		rSetting(new Setting("Mode", this, "Crystal", options));
-		rSetting(new Setting("Health", this, 15, 1, 36, true));
+
+		modeSetting = new OptionSetting(this, "Mode", options, "Crystal");
+		healthSetting = new NumberSetting(this, "Health", 36, 1, 15);
+
+		this.addSettings(modeSetting);
+		this.addSettings(healthSetting);
 	}
 	
 	@Override
@@ -36,14 +40,14 @@ public class Offhand extends Module {
 			}	
 		}
 		
-		if (getHealthWithAbsorption() <= (float) this.getSetting("Health").getValDouble()) {
+		if (getHealthWithAbsorption() <= (float) ((NumberSetting) this.getSetting("Health")).getValue()) {
 			swap(getTotemSlot(), -1);
 		}
 		
 		else {
-			if (this.getSetting("Mode").getValString().equalsIgnoreCase("crystal")) {
+			if (((OptionSetting) this.getSetting("Mode")).getValue().equalsIgnoreCase("crystal")) {
 				swap(getCrystalSlot(), -1);
-			} else if (this.getSetting("Mode").getValString().equalsIgnoreCase("gapple")) {
+			} else if (((OptionSetting) this.getSetting("Mode")).getValue().equalsIgnoreCase("gapple")) {
 				swap(getGappleSlot(), -1);
 			}
 		}

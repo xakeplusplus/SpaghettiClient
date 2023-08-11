@@ -6,6 +6,7 @@ import me.xakeplusplus.spg.module.Module;
 import me.xakeplusplus.spg.module.ModuleManager;
 import me.xakeplusplus.spg.setting.SettingsManager;
 import me.xakeplusplus.spg.ui.clickgui.ClickGui;
+import me.xakeplusplus.spg.util.FontUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -26,8 +27,9 @@ public class SpaghettiClient {
     
     public static final EventBus EVENT_BUS = new EventBus();
     public EventProcessor eventProcessor;
-    public SettingsManager settingsManager;
     public static ModuleManager moduleManager;
+    public static SettingsManager settingsManager;
+    public static FontUtil fontUtil;
     public static ClickGui clickGui;
     public static CommandManager commandManager;
     public static final Logger log = LogManager.getLogger("spaghetti-client");
@@ -40,19 +42,22 @@ public class SpaghettiClient {
     public void init(FMLInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(instance);
         eventProcessor = new EventProcessor();
-        log.info("Event Processor Initialized");
+        log.info("Event Processor Initialized.");
         settingsManager = new SettingsManager();
-        log.info("Settings Manager Initialized");
+        log.info("Settings Manager Initialized.");
         moduleManager = new ModuleManager();
-        log.info("Module Manager Initialized");
+        log.info("Module Manager Initialized.");
+        fontUtil = new FontUtil();
+        log.info("FontUtil Initialized.");
         clickGui = new ClickGui();
-        log.info("ClickGui Initialized");
+        log.info("ClickGui Initialized.");
         commandManager = new CommandManager();
+        log.info("Command Manager Initialized.");
     }
     
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-    	 Display.setTitle(Reference.NAME + Reference.VERSION);
+    	 Display.setTitle(Reference.NAME + " v" + Reference.VERSION);
     }
 
     @SubscribeEvent

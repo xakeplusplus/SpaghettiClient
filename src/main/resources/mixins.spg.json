@@ -5,7 +5,6 @@
     "refmap": "mixins.spg.refmap.json",
     "mixins": [
         "MixinEntityPlayerSP",
-        "MixinNetworkManager",
-        "MixinBlockLiquid"
+        "MixinNetworkManager"
     ]
 }

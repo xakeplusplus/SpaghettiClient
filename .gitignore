@@ -20,3 +20,16 @@ build
 # other
 eclipse
 run
+
+# idk
+screenshots
+crash-reports
+logs
+saves
+options.txt
+usercache.json
+usernamecache.json
+servers.dat
+*.log
+SpaghettiClient
+/config/

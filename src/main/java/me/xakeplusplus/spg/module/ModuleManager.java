@@ -6,7 +6,6 @@ import me.xakeplusplus.spg.module.modules.combat.*;
 import me.xakeplusplus.spg.module.modules.exploits.*;
 import me.xakeplusplus.spg.module.modules.misc.*;
 import me.xakeplusplus.spg.module.modules.movement.*;
-import me.xakeplusplus.spg.module.modules.player.*;
 import me.xakeplusplus.spg.module.modules.render.*;
 import net.minecraftforge.common.MinecraftForge;
 
@@ -33,13 +32,7 @@ public class ModuleManager {
         this.modules.add(new AutoRespawn());
         this.modules.add(new NoFall());
         this.modules.add(new XCarry());
-        this.modules.add(new Hud());
-        this.modules.add(new ChatSuffix());
-        this.modules.add(new GreenText());
-        this.modules.add(new GuiMove());
-        this.modules.add(new LiquidPlace());
-        this.modules.add(new PortalGodMode());
-        this.modules.add(new FakePlayer());
+        this.modules.add(new FontModule());
     }
 
     public void onUpdate() {
@@ -51,9 +44,9 @@ public class ModuleManager {
     }
 
     public Module getModule(String name) {
-        for (Module i : this.modules) {
-            if (i.getName().equalsIgnoreCase(name))
-                return i;
+        for (Module m : modules) {
+            if (m.getName().equalsIgnoreCase(name))
+                return m;
 
         } return null;
 
@@ -66,9 +59,9 @@ public class ModuleManager {
     public static List<Module> getModulesByCategory(Category c) {
         List<Module> modules = new ArrayList<Module>();
 
-        for (Module i : SpaghettiClient.moduleManager.modules) {
-            if (i.getCategory().equals(c)) {
-                modules.add(i);
+        for (Module m : SpaghettiClient.moduleManager.modules) {
+            if (m.getCategory().equals(c)) {
+                modules.add(m);
             }
         } return modules;
     }

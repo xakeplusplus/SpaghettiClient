@@ -1,16 +1,17 @@
 package me.xakeplusplus.spg.module;
 
-
 import com.mojang.realmsclient.gui.ChatFormatting;
 
 import me.xakeplusplus.spg.SpaghettiClient;
 import me.xakeplusplus.spg.Reference;
 import me.xakeplusplus.spg.module.modules.chat.ChatNotifications;
 import me.xakeplusplus.spg.setting.Setting;
+import me.xakeplusplus.spg.setting.SettingsManager;
 import net.minecraft.client.Minecraft;
-import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.common.MinecraftForge;
+
+import java.util.ArrayList;
 
 public class Module {
 	public static Minecraft mc = Minecraft.getMinecraft();
@@ -83,13 +84,28 @@ public class Module {
     public void onUpdate() {}
 
     public void onRender() {}
-    
-    protected final void rSetting(Setting setting) {
-    	SpaghettiClient.instance.getSettingsManager().rSetting(setting);
-    }
-    
+
     protected final Setting getSetting(String name) {
-    	return SpaghettiClient.instance.getSettingsManager().getSettingByName(name);
+        for (Setting s : SpaghettiClient.instance.getSettingsManager().getSettingsByModule(this))
+            if (s.getName().equalsIgnoreCase(name))
+                return s;
+
+
+    	return null;
+    }
+
+    public void addSettings(Setting setting) {
+        ArrayList<Setting> settingArrayList = new ArrayList<>();
+        settingArrayList.add(setting);
+        this.addSettings(settingArrayList);
+    }
+
+    public void addSettings(ArrayList<Setting> settings) {
+        SettingsManager.addSettings(settings);
+    }
+
+    public boolean hasSettings() {
+        return SpaghettiClient.settingsManager.getSettingsByModule(this) != null;
     }
 
 }

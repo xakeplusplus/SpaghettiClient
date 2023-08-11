@@ -9,7 +9,6 @@ import net.minecraft.client.Minecraft;
 public class Fullbright extends Module {
 	public Fullbright() {
 		super("Fullbright", Category.RENDER);
-		this.setKey(Keyboard.KEY_P);
 	}
 	
 	public void onEnable() {
